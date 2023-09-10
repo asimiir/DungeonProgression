@@ -1,0 +1,53 @@
+2023-08-31
+Added a reset button
+
+Changed the option to send the timer infos to self, party, instance and raid
+
+Added an effect when the start timer is clicked, it also disables the stop timer for the duration of the prepull timer.
+
+Changed the basic initial size of the main window
+
+2023-08-21
+added an option button that opens a panel where you can choose where to send the herald infos
+
+when the Start Timer button is clicked once, it disables it until the Stop Timer button is clicked
+
+Added an option to clamp the box to the screen making then unable to go outside the visible screen
+
+Replaced the yellow button on the minimap with the actual logo of the addon
+
+Added an option to sent the timer result to self, target, party or raid
+
+2023-08-15
+Optimized some function
+
+Added a timer
+
+Added a minimap button
+
+Added buttons for the herald function, the start and stop of the chronometer
+
+The addon "reset" when the mob count and the boss count is reached
+
+2023-08-05
+Added Ragefire Chasm, Wailing Caverns, Deadmines, Stormwind Stockade, Blackfathom Deeps, Gnomeregan, Razorfen Kraul, Razorfen Downs, Uldaman, Zul'Farrak, Sunken Temple to the dungeon list
+
+2023-08-04
+Corrected some bugs where the time from the timer was not returning the right time
+
+Added auchindoun to the dungeon list
+
+2023-07-28
+Added to the herald gear check :
+	When the gear is not okay, it will whispher to the target which piece of gear is not okay.
+
+Added Scarlet Halls, Scarlet Monastery, Shadowfang Keep and Scholomance to the dungeon that the addon will count the Elite
+
+Added a countdown function that starts a countdown from 10 and announces the countdown in the appropriate channel (Raid Warning in a raid with raid assist, Party in a raid without raid assist, and Party in a party), then it starts the encounter chronometer when the countdown reaches 0. The Timer stops when the dungeon is considered complete.
+
+2023-07-27
+Added a function for herald of the titans that will tell if the gear under 107 ilvl and if the gear is from an expansion different than Classic, BC and WotLK
+
+Changed the way adds were counted. Now only Elite are counted.
+
+Shadowfang Keep has been verified

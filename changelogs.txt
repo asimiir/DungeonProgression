@@ -1,3 +1,9 @@
+2023-09-17
+Seperated part of the addon to increase readability.
+
+2023-09-02
+Added Forge of Souls, Pit of Saron, Halls of Reflection and The Nexus to the dungeon list
+
 2023-08-31
 Added a reset button
 

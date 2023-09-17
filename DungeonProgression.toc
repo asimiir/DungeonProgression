@@ -1,7 +1,13 @@
-## Interface: 100105
+## Interface: 100107
 ## Title: DungeonProgression
 ## Notes: Displays dungeon progression percentage and the number of remaining bosses/enemies.
 ## Author: Fate
-## Version: 1.0.5
+## Special thanks: Doodihealz, Metrøid, Jolin, Druidman
+## Version: 1.2.3
 
+dungeonsList.lua
+dungeonEncountersArray.lua
+dungeonEliteArray.lua
+timer.lua
 DungeonProgression.lua
+minimapButton.lua

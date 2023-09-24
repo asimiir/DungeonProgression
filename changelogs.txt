@@ -1,3 +1,8 @@
+2023-09-24
+added a slider to change the duration of the delay before the start of the timer
+
+Removed useless comments line
+
 2023-09-17
 Seperated part of the addon to increase readability.
 

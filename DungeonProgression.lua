@@ -1,6 +1,3 @@
--- Chrono is working with command /dpstart and /dpstop
--- needs add Maraudon, Blackrock Depths, Blackrock Spire, Dire Maul to complete Classic
-
 timeBeforeTimer = 3
 
 soundFile = "Interface\\AddOns\\DungeonProgression\\Sounds\\FF7_Victory_Fanfare.mp3"
@@ -42,6 +39,7 @@ local function ToggleDungeonProgressionFrame()
         DungeonProgressionFrame:Show()  -- Show the frame if it's currently hidden
     end
 end
+
 -- Define a function to toggle the visibility of the frame
 local function ToggleDungeonProgressionOptionsFrame()
     if DungeonProgressionOptionsFrame:IsShown() then
@@ -54,7 +52,6 @@ end
 -- Create a function to toggle the "clamp_to_screen" setting
 local function ToggleClampToScreen(self)
     local isChecked = self:GetChecked()
-    -- Your code to handle the checkbox state change (saving settings, updating UI, etc.)
 end
 
 
@@ -106,7 +103,7 @@ end
 
 -- Your existing pull timer function
 local function StartPullTimer()
-    -- ... (other code for your pull timer)
+
     RaidWarningCountdown()  -- Call the countdown function here to start the countdown
 end
 
@@ -114,7 +111,6 @@ local function GetBossFromInstanceByID(id)
 	local bossNames = {}
     for i, boss in ipairs(dungeonEncountersArray) do
         if boss[6] == id then
-			--nBossTotal = nBossTotal + 1;
             table.insert(bossNames, {name = boss[2], killed = false})
         end
     end
@@ -163,7 +159,7 @@ EnterInstanceframe:SetScript("OnEvent", function(self, event, ...)
 		UpdateDungeonProgressionText();
 		
 		ToggleDungeonProgressionFrame()
-		--DungeonProgressionFrame:Show()
+		
 		local mobCalculationframe = CreateFrame("FRAME")
 		mobCalculationframe:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 
@@ -172,8 +168,6 @@ EnterInstanceframe:SetScript("OnEvent", function(self, event, ...)
 				UpdateDungeonProgressionText();
 
 				if eventType == "UNIT_DIED" and UnitIsPlayer(destName) ~= true then
-					--print ("destName==>", destName);
-
 					-- check the number of elite that are killed
 					for i, elite in ipairs(eliteInstance) do
 						if elite.name == destName then
@@ -243,7 +237,6 @@ DungeonProgressionFrame:SetSize(310, 200)
 DungeonProgressionFrame:SetResizeBounds (310, 175, 600, 400)
 
 -- Hide the frame initially
---DungeonProgressionFrame:Hide()
 ToggleDungeonProgressionFrame()
 DungeonProgressionFrame:SetClampedToScreen(isClamped)
 
@@ -281,7 +274,6 @@ StaticPopupDialogs["RESET_CONFIRMATION"] = {
     button1 = "Yes",
     button2 = "No",
     OnAccept = function()
-        -- Perform the reset here
         print("Reset confirmed and performed")
 		resetAll()
     end,
@@ -302,10 +294,9 @@ DungeonProgressionOptionsFrame:SetScript("OnDragStop", DungeonProgressionOptions
 
 -- Set the position and size of the frame
 DungeonProgressionOptionsFrame:SetPoint("RIGHT", DungeonProgressionFrame, "RIGHT", -50, 0)
-DungeonProgressionOptionsFrame:SetSize(300, 250)
+DungeonProgressionOptionsFrame:SetSize(300, 300)
 
 -- Hide the frame initially
---DungeonProgressionFrame:Hide()
 ToggleDungeonProgressionOptionsFrame()
 DungeonProgressionOptionsFrame:SetClampedToScreen(isClamped)
 
@@ -326,7 +317,7 @@ local heraldChoices = {"self", "target", "party", "raid"}
 -- Function to handle dropdown menu selections
 local function HeraldDropdown_OnClick(self)
     UIDropDownMenu_SetSelectedValue(heraldWhisper, self.value)
-    -- Add your code here to handle the selected option
+	
     local selectedValue = UIDropDownMenu_GetSelectedValue(heraldWhisper)
 	
 	heraldSelectedChoice = selectedValue
@@ -425,7 +416,7 @@ local function ToggleMainWindowResizable(self)
     local isResizable = self:GetChecked()
     
     DungeonProgressionFrame:SetResizable(isResizable)
-    -- Add any additional logic related to resizing here
+	
     mainWindowResizable = isResizable;
 	if isResizable then
 		DungeonProgressionFrame:SetResizable(isResizable)
@@ -448,7 +439,7 @@ end)
 DungeonProgressionFrame:SetScript("OnMouseUp", function(self)
 	local width = DungeonProgressionFrame:GetWidth()
     local height = DungeonProgressionFrame:GetHeight()
-    --print(width, height)
+	
     self:StopMovingOrSizing()
 end)
 
@@ -480,24 +471,20 @@ local function ToggleMainWindowLocked(self)
     local isLocked = self:GetChecked()
     
     DungeonProgressionFrame:SetMovable(not isLocked)
-    -- Add any additional logic related to locking here
 	
 	mainWindowLocked = isLocked
 	
 	DungeonProgressionFrame:EnableMouse(not mainWindowLocked)
-	--print("mainWindowLocked==>"..tostring(mainWindowLocked))
 	-- Disable mainWindowResizableCheckbox if mainWindowLocked is true
 	if mainWindowLocked then 
 		DungeonProgressionOptionsFrame.mainWindowResizableCheckbox:Disable()
-		--print("color==>"..DungeonProgressionOptionsFrame.mainWindowResizableLabel:GetTextColor())
+		
 		DungeonProgressionOptionsFrame.mainWindowResizableLabel:SetTextColor(0.5, 0.5, 0.5, 1)  -- Set gray color
-		--DungeonProgressionOptionsFrame.mainWindowResizableCheckbox:SetBackdropColor(0.5, 0.5, 0.5, 1)  -- Set gray color
 		mainWindowResizable = false
 		mainWindowMovable = false
 	else
         DungeonProgressionOptionsFrame.mainWindowResizableCheckbox:Enable()
 		DungeonProgressionOptionsFrame.mainWindowResizableLabel:SetTextColor(1, 0.82, 0, 1) -- RGB values for #FFD100  -- Restore original color
-        --DungeonProgressionOptionsFrame.mainWindowResizableCheckbox:SetBackdropColor(1, 1, 1, 1)  -- Restore original color
 		mainWindowMovable = true
 	end
 	    
@@ -528,6 +515,29 @@ mainWindowLockedCheckbox:SetScript("OnClick", ToggleMainWindowLocked)
 DungeonProgressionOptionsFrame.mainWindowLockedCheckbox = mainWindowLockedCheckbox
 DungeonProgressionOptionsFrame.mainWindowLockedLabel = mainWindowLockedLabel
 
+-- Create the slider within DungeonProgressionOptionsFrame
+local timerSlider = CreateFrame("Slider", "DungeonProgressionSlider", DungeonProgressionOptionsFrame, "OptionsSliderTemplate")
+timerSlider:SetWidth(200)
+timerSlider:SetHeight(20)
+timerSlider:SetPoint("TOPLEFT", 20, -260)
+
+timerSlider:SetMinMaxValues(3, 10)  -- Set the range from 3 to 10
+timerSlider:SetValue(3)  -- Set the initial value to 3
+timerSlider:SetValueStep(1)  -- Set the step size for changing the value
+
+-- Create a label to display the slider's current value
+timerSlider.text = timerSlider:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+timerSlider.text:SetPoint("BOTTOM", timerSlider, "TOP", 0, 5)
+timerSlider.text:SetText("Timer delay : " .. timerSlider:GetValue())
+
+-- Define a callback function for when the slider's value changes
+timerSlider:SetScript("OnValueChanged", function(self, value)
+    local roundedValue = math.floor(value + 0.5)  -- Round the value to the nearest integer
+    self:SetValue(roundedValue)  -- Set the slider's value to the rounded value
+    self.text:SetText("Timer delay : " .. roundedValue)
+   
+	timeBeforeTimer = roundedValue
+end)
 --------------------------------------option frame
 
 
@@ -588,7 +598,6 @@ DungeonProgressionText:SetPoint("TOPLEFT", DungeonProgressionFrame, "TOPLEFT", 1
 DungeonProgressionText:SetPoint("BOTTOMRIGHT", DungeonProgressionFrame, "BOTTOMRIGHT", -10, 40)
 DungeonProgressionText:SetJustifyH("LEFT")
 DungeonProgressionText:SetJustifyV("TOP")
---DungeonProgressionText:SetText("Instance name : "..select(1,GetInstanceInfo(1)).."\n\nBoss down : "..nbDown.." out of "..nBossTotal.."\n\nMob count : ")
 
 function dpshow()
 	UpdateDungeonProgressionText()
@@ -656,8 +665,7 @@ local function ScanCharacterSheet()
         end
     end
 end
-------------------------------------------------------------------------------
--- Define the function to be executed when the slash command is used
+
 function dpTestFunction()
 	local val = 0;
     for _, elite in ipairs(eliteInstance) do
@@ -677,8 +685,6 @@ local function dpHerald()
     ScanCharacterSheet();
 end
 
-------------------------------------------------------------------------------
-
 text = ""
 theTimeElapsed = "00:00"
 
@@ -695,7 +701,6 @@ end
 local mobDeaths = {}
 local mobDeathsTrigger = 0
 
--- Define the event handler function
 local function OnCombatLogEvent(self, event, ...)
   -- Extract data from the combat log
   local _, subEvent, _, _, _, _, _, destGUID = CombatLogGetCurrentEventInfo()
@@ -706,7 +711,6 @@ local function OnCombatLogEvent(self, event, ...)
     mobDeaths[destGUID] = true
     mobDeathsTrigger = mobDeathsTrigger + 1
 
-    -- Perform other actions here
     UpdateDungeonProgressionText()
   end
 end
@@ -732,7 +736,6 @@ function resetAll()
 end
 
 -------------------------------------------------------------------------------------------
--- Define the function to be executed when the slash command is used
 function dpReset()
     resetAll()
 	UpdateDungeonProgressionText()
@@ -791,6 +794,5 @@ end)
 
 -- Function to be executed when the "Options" button is clicked
 OptionsButton:SetScript("OnClick", function(self, button, down)
-    -- Add your code here to open the options menu
 	ToggleDungeonProgressionOptionsFrame()
 end)

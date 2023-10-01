@@ -4,7 +4,7 @@ soundFile = "Interface\\AddOns\\DungeonProgression\\Sounds\\FF7_Victory_Fanfare.
 nBossTotal = 0;
 mapID = 0;
 nbDown = 0;
-pourcentageAdd = 0.85
+pourcentageAdd = 0.85;
 mobDeathsTrigger = 0;
 nBossKilled = 0;
 numMobsDied = 0
@@ -29,8 +29,6 @@ isClamped = true
 
 --------------------------------------- TIMER
 
-
-
 -- Define a function to toggle the visibility of the frame
 local function ToggleDungeonProgressionFrame()
     if DungeonProgressionFrame:IsShown() then
@@ -53,7 +51,6 @@ end
 local function ToggleClampToScreen(self)
     local isChecked = self:GetChecked()
 end
-
 
 local function RaidWarningCountdown()
     local count = timeBeforeTimer
@@ -99,7 +96,6 @@ local function RaidWarningCountdown()
 
     AnnounceCountdown()
 end
-
 
 -- Your existing pull timer function
 local function StartPullTimer()
@@ -540,7 +536,6 @@ timerSlider:SetScript("OnValueChanged", function(self, value)
 end)
 --------------------------------------option frame
 
-
 -- Create the "Herald" button
 local HeraldButton = CreateFrame("Button", "DungeonProgressionHeraldButton", DungeonProgressionFrame, "UIPanelButtonTemplate")
 HeraldButton:SetPoint("BOTTOMLEFT", DungeonProgressionFrame, "BOTTOMLEFT", 10, 10)
@@ -688,13 +683,28 @@ end
 text = ""
 theTimeElapsed = "00:00"
 
+-- Display name for a given instance name
+local function GetDisplayName(instanceName)
+	-- Use the dictionary to directly access the display name based on the instance name
+    -- If no match is found, it returns the original instance name
+    for _, entry in ipairs(displayInstanceName) do
+        if entry[1] == instanceName then
+            return entry[2]
+        end
+    end
+    return instanceName  -- Return the original instanceName if no match is found
+end
+
 function UpdateDungeonProgressionText()
     local instanceName, _, _, _, _, _, _, instanceID = GetInstanceInfo()
 	
 	-- Calculate the mob count percentage
     text = formattedPercentage ~= "" and formattedPercentage or "0%"
 	
-    DungeonProgressionText:SetText("Instance name: " .. instanceName .. "\n\nBoss down: " .. nbDown .. " out of " .. nBossTotal .. "\n\n Mob Count : " .. text  .. "\n\n Timer : " .. theTimeElapsed )
+	-- Get the name to display
+	local displayName = GetDisplayName(instanceName);
+	
+    DungeonProgressionText:SetText("Instance name: " .. displayName .. "\n\nBoss down: " .. nbDown .. " out of " .. nBossTotal .. "\n\n Mob Count : " .. text  .. "\n\n Timer : " .. theTimeElapsed )
 end
 
 -- Define a table to store the mob deaths

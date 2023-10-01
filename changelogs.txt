@@ -1,3 +1,9 @@
+2023-09-30
+Added to the dungeon list Lower Blackrock Spire, The Blood Furnace, Hellfire Ramparts, Shattered Halls, Slave Pens, Steamvault, Underbog, The Botanica, The Mechanar, The Arcatraz, Auchenai Crypts, Mana-Tombs, Sethekk Halls, Shadow Labyrinth, Magisters' Terrace, Opening of the Dark Portal and The Escape from Durnholde
+
+Added a function to change the name of all the dungeon to have a shorter name.
+	Ex: "Hellfire Citadel: Ramparts" is now "Hellfire Ramparts"
+
 2023-09-24
 added a slider to change the duration of the delay before the start of the timer
 

@@ -4,7 +4,7 @@ soundFile = "Interface\\AddOns\\DungeonProgression\\Sounds\\FF7_Victory_Fanfare.
 nBossTotal = 0;
 mapID = 0;
 nbDown = 0;
-pourcentageAdd = 0.85;
+pourcentageAdd = 1;
 mobDeathsTrigger = 0;
 nBossKilled = 0;
 numMobsDied = 0
@@ -26,6 +26,11 @@ mainWindowMovable = true
 mainWindowLocked = true
 
 isClamped = true
+
+mobCountComplete = false
+bossCountComplete = false
+mobCountCompleteShowed = false
+bossCountCompleteShowed = false
 
 --------------------------------------- TIMER
 
@@ -171,7 +176,10 @@ EnterInstanceframe:SetScript("OnEvent", function(self, event, ...)
 							elite.amountKilled = elite.amountKilled + 1;
 
 							formattedPercentage = string.format("%.2f%%", (eliteTotalKilled / eliteTotal * 100));
+							
 							if eliteTotalKilled >= eliteTotal then
+								mobCountComplete = true
+								CheckDungeonCompletion()
 								formattedPercentage = string.format("%.2f%%", (eliteTotal / eliteTotal * 100));
 							end
 						end
@@ -191,10 +199,8 @@ EnterInstanceframe:SetScript("OnEvent", function(self, event, ...)
 									nbDown = nBossKilled;
 
 									if nBossKilled == nBossTotal then 
-										StopChronometer();
-										print("FINISH");
-										PlaySoundFile(soundFile, "Master")
-										dpReset();
+										bossCountComplete = true
+										CheckDungeonCompletion()
 										break;
 									end
 								end
@@ -212,7 +218,22 @@ EnterInstanceframe:SetScript("OnEvent", function(self, event, ...)
 	end
 end)
 
-
+function CheckDungeonCompletion()
+	if mobCountComplete and mobCountCompleteShowed == false then
+		mobCountCompleteShowed = true
+		print("ALL MOBS KILLED")
+	end
+	if bossCountComplete and bossCountCompleteShowed == false then
+		bossCountCompleteShowed = true
+		print("ALL BOSSES DOWN")
+	end
+	if mobCountComplete and bossCountComplete then
+		StopChronometer();
+		print("FINISH");
+		PlaySoundFile(soundFile, "Master")
+		dpReset();
+	end
+end
 
 ------------------------------------------ Box Display
 
@@ -743,6 +764,10 @@ function resetAll()
 	text = ""
 	theTimeElapsed = "00:00"
 	UpdateDungeonProgressionText()
+	mobCountComplete = false
+	bossCountComplete = false
+	mobCountCompleteShowed = false
+	bossCountCompleteShowed = false
 end
 
 -------------------------------------------------------------------------------------------

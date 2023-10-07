@@ -1,3 +1,8 @@
+2023-10-06
+Corrected a bug where it was possible to finish the dungeon without killing all the mobs.
+
+Added a message when the mob count is reached and when the all the bosses are killed
+
 2023-09-30
 Added to the dungeon list Lower Blackrock Spire, The Blood Furnace, Hellfire Ramparts, Shattered Halls, Slave Pens, Steamvault, Underbog, The Botanica, The Mechanar, The Arcatraz, Auchenai Crypts, Mana-Tombs, Sethekk Halls, Shadow Labyrinth, Magisters' Terrace, Opening of the Dark Portal and The Escape from Durnholde
 

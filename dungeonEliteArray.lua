@@ -1,3 +1,13 @@
+-- Stratholme is removed because for now there is no way to differenciate the main gate from the service entrance
+-- Classic : Dire Maul, Maraudon
+-- BC : Complete
+-- WotLK : Complete
+-- Cataclysm
+-- Warlords of Draenor
+-- Legion
+-- Battle for Azeroth
+-- Shadowlands
+
 --Each entry in the table has 3 values:
 -- 1 The name of the dungeon.
 -- 2 The name of the Elite
@@ -332,6 +342,37 @@ dungeonEliteArray = {
 {"Dire Maul", "Wilspawn Shadowstalker", 1},
 {"Dire Maul", "Wilspawn Trickster", 1},
 {"Dire Maul", "Xorothian Dreadsteed", 1},
+--{"Stratholme", "Ghostly Citizen", 1}, -- Main Gate
+--{"Stratholme", "Mangled Cadaver", 13}, -- Main Gate
+--{"Stratholme", "Patchwork Horror", 3}, -- Main Gate
+--{"Stratholme", "Plague Ghoul", 20}, -- Main Gate
+--{"Stratholme", "Ravaged Cadaver", 25}, -- Main Gate
+--{"Stratholme", "Risen Battle Mage", 4}, -- Main Gate
+--{"Stratholme", "Risen Conjuror", 11}, -- Main Gate
+--{"Stratholme", "Risen Defender", 9}, -- Main Gate
+--{"Stratholme", "Risen Gallant", 12}, -- Main Gate
+--{"Stratholme", "Risen Guardsman", 17}, -- Main Gate
+--{"Stratholme", "Risen Initiate", 6}, -- Main Gate
+--{"Stratholme", "Risen Inquisitor", 2}, -- Main Gate
+--{"Stratholme", "Risen Monk", 7}, -- Main Gate
+--{"Stratholme", "Risen Priest", 2}, -- Main Gate
+--{"Stratholme", "Risen Sorcerer", 9}, -- Main Gate
+--{"Stratholme", "Spectral Citizen", 6}, -- Main Gate
+--{"Stratholme", "Bile Spewer", 2}, -- Service Entrance
+--{"Stratholme", "Black Guard Sentry", 5}, -- Service Entrance
+--{"Stratholme", "Crypt Beast", 5}, -- Service Entrance
+--{"Stratholme", "Crypt Crawler", 4}, -- Service Entrance
+--{"Stratholme", "Fleshflayer Ghoul", 10}, -- Service Entrance
+--{"Stratholme", "Ghoul Ravener", 12}, -- Service Entrance
+--{"Stratholme", "Mangled Cadaver", 4}, -- Service Entrance
+--{"Stratholme", "Plague Ghoul", 12}, -- Service Entrance
+--{"Stratholme", "Ravaged Cadaver", 4}, -- Service Entrance
+--{"Stratholme", "Rockwing Gargoyle", 4}, -- Service Entrance
+--{"Stratholme", "Rockwing Screecher", 3}, -- Service Entrance
+--{"Stratholme", "Thuzadin Necromancer", 14}, -- Service Entrance
+--{"Stratholme", "Thuzadin Shadowcaster", 16}, -- Service Entrance
+--{"Stratholme", "Venom Belcher", 7}, -- Service Entrance
+--{"Stratholme", "Wailing Banshee", 6}, -- Service Entrance
 -- Burning Crusade
 {"Hellfire Citadel: The Blood Furnace", "Fel Orc Neophyte", 8},
 {"Hellfire Citadel: The Blood Furnace", "Felguard Annihilator", 6},
@@ -588,6 +629,154 @@ dungeonEliteArray = {
 {"The Nexus", "Mage Hunter Initiate", 7},
 {"The Nexus", "Mage Slayer", 6},
 {"The Nexus", "Steward", 5},
+{"Ahn'kahet: The Old Kingdom", "Ahn'kahar Slasher", 11},
+{"Ahn'kahet: The Old Kingdom", "Ahn'kahar Spell Flinger", 10},
+{"Ahn'kahet: The Old Kingdom", "Ahn'kahar Web Winder", 8},
+{"Ahn'kahet: The Old Kingdom", "Bonegrinder", 2},
+{"Ahn'kahet: The Old Kingdom", "Bound Air Elemental", 2},
+{"Ahn'kahet: The Old Kingdom", "Bound Fire Elemental", 2},
+{"Ahn'kahet: The Old Kingdom", "Bound Water Elemental", 2},
+{"Ahn'kahet: The Old Kingdom", "Deep Crawler", 11},
+{"Ahn'kahet: The Old Kingdom", "Eye of Taldaram", 7},
+{"Ahn'kahet: The Old Kingdom", "Forgotten One", 3},
+{"Ahn'kahet: The Old Kingdom", "Frostbringer", 7},
+{"Ahn'kahet: The Old Kingdom", "Plague Walker", 4},
+{"Ahn'kahet: The Old Kingdom", "Savage Cave Beast", 6},
+{"Ahn'kahet: The Old Kingdom", "Twilight Apostle", 7},
+{"Ahn'kahet: The Old Kingdom", "Twilight Darkcaster", 5},
+{"Ahn'kahet: The Old Kingdom", "Twilight Initiate", 15},
+{"Ahn'kahet: The Old Kingdom", "Twilight Worshipper", 6},
+{"Azjol-Nerub", "Anub'ar Crusher", 3},
+{"Azjol-Nerub", "Anub'ar Guardian", 1},
+{"Azjol-Nerub", "Anub'ar Prime Guard", 2},
+{"Azjol-Nerub", "Anub'ar Shadowcaster", 2},
+{"Azjol-Nerub", "Anub'ar Skirmisher", 3},
+{"Azjol-Nerub", "Anub'ar Venomancer", 1},
+{"Azjol-Nerub", "Anub'ar Warrior", 4},
+{"Azjol-Nerub", "Anub'ar Webspinner", 2},
+{"Azjol-Nerub", "Watcher Gashra", 1},
+{"Azjol-Nerub", "Watcher Narjil", 1},
+{"Azjol-Nerub", "Watcher Silthik", 1},
+{"Drak'Tharon Keep", "Crystal Handler", 4},
+{"Drak'Tharon Keep", "Darkweb Recluse", 5},
+{"Drak'Tharon Keep", "Drakkari Commander", 1},
+{"Drak'Tharon Keep", "Drakkari Guardian", 10},
+{"Drak'Tharon Keep", "Drakkari Gutripper", 6},
+{"Drak'Tharon Keep", "Drakkari Scytheclaw", 3},
+{"Drak'Tharon Keep", "Drakkari Shaman", 3},
+{"Drak'Tharon Keep", "Flesheating Ghoul", 4},
+{"Drak'Tharon Keep", "Ghoul Tormentor", 5},
+{"Drak'Tharon Keep", "Hulking Corpse", 2},
+{"Drak'Tharon Keep", "Risen Drakkari Bat Rider", 1},
+{"Drak'Tharon Keep", "Risen Drakkari Death Knight", 5},
+{"Drak'Tharon Keep", "Risen Drakkari Handler", 3},
+{"Drak'Tharon Keep", "Risen Drakkari Soulmage", 4},
+{"Drak'Tharon Keep", "Risen Drakkari Warrior", 10},
+{"Drak'Tharon Keep", "Scourge Brute", 1},
+{"Drak'Tharon Keep", "Scourge Reanimator", 2},
+{"Drak'Tharon Keep", "Wretched Belcher", 2},
+{"Utgarde Pinnacle", "Bloodthirsty Tundra Wolf", 6},
+{"Utgarde Pinnacle", "Dragonflayer Deathseeker", 5},
+{"Utgarde Pinnacle", "Dragonflayer Fanatic", 5},
+{"Utgarde Pinnacle", "Dragonflayer Seer", 4},
+{"Utgarde Pinnacle", "Ferocious Rhino", 1},
+{"Utgarde Pinnacle", "Frenzied Worgen", 1},
+{"Utgarde Pinnacle", "Grauf", 1},
+{"Utgarde Pinnacle", "Massive Jormungar", 1},
+{"Utgarde Pinnacle", "Ravenous Furbolg", 1},
+{"Utgarde Pinnacle", "Scourge Hulk", 7},
+{"Utgarde Pinnacle", "Ymirjar Berserker", 7},
+{"Utgarde Pinnacle", "Ymirjar Dusk Shaman", 6},
+{"Utgarde Pinnacle", "Ymirjar Flesh Hunter", 5},
+{"Utgarde Pinnacle", "Ymirjar Harpooner", 3},
+{"Utgarde Pinnacle", "Ymirjar Necromancer", 5},
+{"Utgarde Pinnacle", "Ymirjar Savage", 5},
+{"Utgarde Pinnacle", "Ymirjar Warrior", 12},
+{"Utgarde Pinnacle", "Ymirjar Witch Doctor", 2},
+{"Utgarde Keep", "Dalronn the Controller", 2},
+{"Utgarde Keep", "Dragonflayer Bonecrusher", 4},
+{"Utgarde Keep", "Dragonflayer Forge Master", 3},
+{"Utgarde Keep", "Dragonflayer Heartsplitter", 3},
+{"Utgarde Keep", "Dragonflayer Ironhelm", 5},
+{"Utgarde Keep", "Dragonflayer Metalworker", 8},
+{"Utgarde Keep", "Dragonflayer Overseer", 4},
+{"Utgarde Keep", "Dragonflayer Runecaster", 10},
+{"Utgarde Keep", "Dragonflayer Spiritualist", 2},
+{"Utgarde Keep", "Dragonflayer Strategist", 7},
+{"Utgarde Keep", "Dragonflayer Weaponsmith", 6},
+{"Utgarde Keep", "Enslaved Proto-Drake", 7},
+{"Utgarde Keep", "Proto-Drake Handler", 5},
+{"Utgarde Keep", "Proto-Drake Rider", 1},
+{"Utgarde Keep", "Skarvald the Constructor", 1},
+{"Gundrak", "Drakkari Battle Rider", 3},
+{"Gundrak", "Drakkari Earthshaker", 4},
+{"Gundrak", "Drakkari Elemental", 1},
+{"Gundrak", "Drakkari Fire Weaver", 3},
+{"Gundrak", "Drakkari God Hunter", 7},
+{"Gundrak", "Drakkari Golem", 3},
+{"Gundrak", "Drakkari Inciter", 1},
+{"Gundrak", "Drakkari Lancer", 7},
+{"Gundrak", "Drakkari Rhino", 4},
+{"Gundrak", "Living Mojo", 4},
+{"Gundrak", "Spitting Cobra", 17},
+{"Gundrak", "Unyielding Constrictor", 7},
+{"Halls of Lightning", "Blistering Steamrager", 12},
+{"Halls of Lightning", "Hardened Steel Berserker", 5},
+{"Halls of Lightning", "Hardened Steel Reaver", 8},
+{"Halls of Lightning", "Hardened Steel Skycaller", 7},
+{"Halls of Lightning", "Stormforged Construct", 7},
+{"Halls of Lightning", "Stormforged Giant", 2},
+{"Halls of Lightning", "Stormforged Lieutenant", 2},
+{"Halls of Lightning", "Stormforged Mender", 9},
+{"Halls of Lightning", "Stormforged Runeshaper", 10},
+{"Halls of Lightning", "Stormforged Sentinel", 6},
+{"Halls of Lightning", "Stormforged Tactician", 8},
+{"Halls of Lightning", "Stormfury Revenant", 5},
+{"Halls of Lightning", "Storming Vortex", 2},
+{"Halls of Lightning", "Titanium Siegebreaker", 4},
+{"Halls of Lightning", "Titanium Thunderer", 5},
+{"Halls of Lightning", "Titanium Vanguard", 7},
+{"Halls of Lightning", "Unbound Firestorm", 10},
+{"Halls of Stone", "Dark Rune Controller", 2},
+{"Halls of Stone", "Dark Rune Elementalist", 5},
+{"Halls of Stone", "Dark Rune Giant", 4},
+{"Halls of Stone", "Dark Rune Protector", 27},
+{"Halls of Stone", "Dark Rune Scholar", 2},
+{"Halls of Stone", "Dark Rune Shaper", 5},
+{"Halls of Stone", "Dark Rune Theurgist", 12},
+{"Halls of Stone", "Dark Rune Warrior", 10},
+{"Halls of Stone", "Dark Rune Worker", 3},
+{"Halls of Stone", "Iron Golem Custodian", 2},
+{"Halls of Stone", "Lightning Construct", 5},
+{"Halls of Stone", "Raging Construct", 1},
+{"Halls of Stone", "Unrelenting Construct", 8},
+{"Trial of the Champion", "Argent Monk", 3},
+{"Trial of the Champion", "Argent Priestess", 3},
+{"The Oculus", "Azure Inquisitor", 4},
+{"The Oculus", "Azure Spellbinder", 5},
+{"The Oculus", "Centrifuge Construct", 10},
+{"The Oculus", "Greater Ley-Whelp", 5},
+{"The Oculus", "Phantasmal Air", 2},
+{"The Oculus", "Phantasmal Cloudshaper", 1},
+{"The Oculus", "Phantasmal Fire", 1},
+{"The Oculus", "Phantasmal Mammoth", 2},
+{"The Oculus", "Phantasmal Murloc", 1},
+{"The Oculus", "Phantasmal Naga", 2},
+{"The Oculus", "Phantasmal Ogre", 1},
+{"The Oculus", "Phantasmal Water", 1},
+{"The Oculus", "Phantasmal Wolf", 1},
+{"The Oculus", "Ring-Lord Conjurer", 7},
+{"The Oculus", "Ring-Lord Sorceress", 7},
+{"The Culling of Stratholme", "Bile Golem", 2},
+{"The Culling of Stratholme", "Crypt Fiend", 3},
+{"The Culling of Stratholme", "Dark Necromancer", 4},
+{"The Culling of Stratholme", "Devouring Ghoul", 15},
+{"The Culling of Stratholme", "Enraging Ghoul", 8},
+{"The Culling of Stratholme", "Infinite Adversary", 6},
+{"The Culling of Stratholme", "Infinite Agent", 5},
+{"The Culling of Stratholme", "Master Necromancer", 2},
+{"The Culling of Stratholme", "Patchwork Construct", 3},
+{"The Culling of Stratholme", "Tomb Stalker", 4},
 -- Cataclysm
 -- Mist of Pandaria
 -- Warlords of Draenor
@@ -615,5 +804,6 @@ dungeonEliteArray = {
 {"Auchindoun", "Gul'Kosh", 1},
 {"Auchindoun", "Grom'tash the Destructor", 1},
 -- Legion
+-- Battle for Azeroth
 -- Shadowlands
 }

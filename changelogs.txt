@@ -1,3 +1,14 @@
+2023-10-09
+Added the version number in the title of the addon "Dungeon Progression v 1.3.3"
+
+Removed the "Instance name" part to get more space for the name of the dungeon the player is actually in
+
+Aligned better the text in the main window
+
+Added to the dungeon list Ahn'kahet: The Old Kingdom, Azjol-Nerub, Drak'Tharon Keep, Utgarde Pinnacle, Utgarde Keep, Gundrak, Halls of Lightning, Halls of Stone, Trial of the Champion, The Oculus and The Culling of Stratholme
+
+Note : I added both part of Stratholme but commented them because for now, there is no way to know from which entrance the player went between the main gate from the service entrance
+
 2023-10-06
 Corrected a bug where it was possible to finish the dungeon without killing all the mobs.
 

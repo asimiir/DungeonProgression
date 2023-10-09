@@ -9,6 +9,7 @@ mobDeathsTrigger = 0;
 nBossKilled = 0;
 numMobsDied = 0
 formattedPercentage = "";
+addonVersion = "1.3.4"
 
 startTime = nil
 timerFrame = nil
@@ -579,10 +580,10 @@ local OptionsButton = CreateFrame("Button", "DungeonProgressionGearButton", Dung
 OptionsButton:SetPoint("TOPRIGHT", DungeonProgressionFrame, "TOPRIGHT", -10, -30)
 OptionsButton:SetSize(30, 30)
 
-local normalTexture = OptionsButton:CreateTexture(nil, "ARTWORK")
-normalTexture:SetTexture("Interface\\AddOns\\DungeonProgression\\images\\options.png")
-normalTexture:SetAllPoints(OptionsButton)
-OptionsButton:SetNormalTexture(normalTexture)
+local optionButtonTexture = OptionsButton:CreateTexture(nil, "ARTWORK")
+optionButtonTexture:SetTexture("Interface\\AddOns\\DungeonProgression\\images\\options.png")
+optionButtonTexture:SetAllPoints(OptionsButton)
+OptionsButton:SetNormalTexture(optionButtonTexture)
 
 OptionsButton:SetScript("OnEnter", function(self)
     self:GetNormalTexture():SetVertexColor(0.7, 0.7, 0.7, 1)
@@ -601,9 +602,36 @@ OptionsButton:SetScript("OnMouseUp", function(self, button)
     end
 end)
 
+--local aboutButton = CreateFrame("Button", "DungeonProgressionAboutButton", DungeonProgressionFrame)
+--aboutButton:SetPoint("TOPRIGHT", DungeonProgressionFrame, "TOPRIGHT", -10, -70)
+--aboutButton:SetSize(30, 30)
+--
+--local optionButtonTexture = aboutButton:CreateTexture(nil, "ARTWORK")
+--optionButtonTexture:SetTexture("Interface\\AddOns\\DungeonProgression\\images\\about.png")
+--optionButtonTexture:SetAllPoints(aboutButton)
+--aboutButton:SetNormalTexture(optionButtonTexture)
+--
+--aboutButton:SetScript("OnEnter", function(self)
+--    self:GetNormalTexture():SetVertexColor(0.7, 0.7, 0.7, 1)
+--end)
+--aboutButton:SetScript("OnLeave", function(self)
+--    self:GetNormalTexture():SetVertexColor(1, 1, 1, 1)
+--end)
+--aboutButton:SetScript("OnMouseDown", function(self, button)
+--    self:GetNormalTexture():SetVertexColor(0.5, 0.5, 0.5, 1)
+--end)
+--aboutButton:SetScript("OnMouseUp", function(self, button)
+--    self:GetNormalTexture():SetVertexColor(0.7, 0.7, 0.7, 1)
+--    if button == "LeftButton" then
+--        -- Show a confirmation dialog before performing an action
+--        print("about button")
+--    end
+--end)
+
 local DungeonProgressionTitle = DungeonProgressionFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 DungeonProgressionTitle:SetPoint("TOP", DungeonProgressionFrame, "TOP", 0, -5)
-DungeonProgressionTitle:SetText("Dungeon Progression")
+DungeonProgressionTitle:SetText("Dungeon Progression - v "..addonVersion)
+DungeonProgressionTitle:SetFont("Fonts\\FRIZQT__.TTF", 13, "OUTLINE")
 
 local DungeonProgressionOptionsTitle = DungeonProgressionOptionsFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 DungeonProgressionOptionsTitle:SetPoint("TOP", DungeonProgressionOptionsFrame, "TOP", 0, -5)
@@ -725,7 +753,7 @@ function UpdateDungeonProgressionText()
 	-- Get the name to display
 	local displayName = GetDisplayName(instanceName);
 	
-    DungeonProgressionText:SetText("Instance name: " .. displayName .. "\n\nBoss down: " .. nbDown .. " out of " .. nBossTotal .. "\n\n Mob Count : " .. text  .. "\n\n Timer : " .. theTimeElapsed )
+    DungeonProgressionText:SetText(displayName .. "\n\nBoss down: " .. nbDown .. " out of " .. nBossTotal .. "\n\nMob Count : " .. text  .. "\n\nTimer : " .. theTimeElapsed )
 end
 
 -- Define a table to store the mob deaths
